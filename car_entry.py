@@ -23,7 +23,7 @@ if not os.path.exists(csv_file):
         writer.writerow(['Plate Number', 'Payment Status', 'Timestamp'])
 
 # ===== Auto-detect Arduino Serial Port =====
-# Use `python3 -m serial.tools.list_ports -v` to find the port for linux
+# Used `python3 -m serial.tools.list_ports -v` to find the port for linux
 def detect_arduino_port():
     ports = list(serial.tools.list_ports.comports())
     for port in ports:
