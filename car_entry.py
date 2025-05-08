@@ -20,7 +20,7 @@ csv_file = 'plates_log.csv'
 if not os.path.exists(csv_file):
     with open(csv_file, 'w', newline='') as f:
         writer = csv.writer(f)
-        writer.writerow(['Plate Number', 'Payment Status', 'Timestamp'])
+        writer.writerow(['Plate Number', 'Entry Time', 'Exit Time', 'Due Amount', 'Payment Status'])
 
 # ===== Auto-detect Arduino Serial Port =====
 # Used `python3 -m serial.tools.list_ports -v` to find the port for linux
@@ -102,7 +102,7 @@ while True:
 
                                     with open(csv_file, 'a', newline='') as f:
                                         writer = csv.writer(f)
-                                        writer.writerow([most_common, 0,time.strftime('%Y-%m-%d %H:%M:%S')])
+                                        writer.writerow([most_common, time.strftime('%Y-%m-%d %H:%M:%S'), '', '', '0'])
                                     print(f"[SAVED] {most_common} logged to CSV.")
 
                                     if arduino:
