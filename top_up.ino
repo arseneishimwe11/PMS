@@ -13,7 +13,7 @@ MFRC522::StatusCode status;
 #define BALANCE_BLOCK   4
 
 // Your license plate number and initial balance
-String plateNumber = "RAH972U";  // Replace with your actual plate number
+String plateNumber = "RAH972U";  // Car plate number
 int initialBalance = 20000;       // Initial balance in RWF
 
 void setup() {
